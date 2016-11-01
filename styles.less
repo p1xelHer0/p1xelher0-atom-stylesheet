@@ -315,14 +315,38 @@ ide-haskell-panel {
 
 // haskell-repl
 div.ide-haskell-repl {
-
-  .ide-haskell-repl-output + div {
-    font-family: 'Fira Code';
-  }
-
   .ide-haskell-repl-output + div {
     border-top: 1px solid @syntax-wrap-guide-color;
     font-family: 'Fira Code';
+  }
+  
+  .ide-haskell-repl-output {
+    .ide-haskell-repl-input-text,
+    .ide-haskell-repl-message-text,
+    .ide-haskell-repl-output-text, {
+      background-color: none;
+      background: none;
+      border: none;
+    }
+    
+    .ide-haskell-repl-input-text:before, .ide-haskell-repl-message-text:before,
+    .ide-haskell-repl-output-text:before {
+      background-color: none;
+      background: none;
+      border: none;
+      padding-top: 0.2em;
+      padding-left: 0.3em;
+    }
+    .ide-haskell-repl-output-text:before {
+      color: @text-color-success;
+    }
+    .ide-haskell-repl-message-text:before {
+      color: @syntax-color-builtin;
+    }
+    .ide-haskell-repl-input-text:before {
+      color: @syntax-color-function;
+    }
+    
   }
 
   // interrupt button
